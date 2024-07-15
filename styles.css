@@ -1,0 +1,29 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.card {
+  background: linear-gradient(to right, green 25%, blue);
+  padding: 10px;
+  margin: 10px;
+  max-height: 80%;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  color: white;
+}
+
+.weather-info img {
+  height: 60px;
+}
