@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" , href="styles.css" />
-    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="card">
       <form class="search-form">
-        <input type="text" placeholder="Enter City Name" />
+        <input type="text" placeholder="Enter City Name" id="city-input" />
         <button id="search-button">Search</button>
       </form>
       <section class="weather-info">
