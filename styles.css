@@ -38,3 +38,12 @@ body {
 .weather-info img {
   height: 60px;
 }
+
+.invalid-city-name {
+  display: none;
+  color: white;
+}
+
+.show-weather-info {
+  display: flex;
+}

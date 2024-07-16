@@ -1,4 +1,5 @@
 const searchButton = document.getElementById("search-button");
+const weatherIcon = document.getElementById("weather-icon");
 const temperature = document.querySelector(".temp");
 const city = document.querySelector(".city");
 
@@ -16,11 +17,22 @@ async function checkWeather(e) {
       apiUrl + `&appid=${apiKey}&q=${cityInput}`
     );
     const data = response.data;
-    console.log(data);
 
+    document.getElementById("error").style.display = "none";
+    document.querySelector(".weather-info").classList.add(".show-weather-info");
+    weatherIcon.src = `images/${data.weather[0].main}.png`;
     temperature.innerHTML = data.main.temp + "°C";
     city.innerHTML = data.name;
   } catch (error) {
     console.log("Error fetching weather data:", error);
+
+    if (error.response.status == 404) {
+      document.getElementById("error").style.display = "block";
+      document
+        .querySelector(".weather-info")
+        .classList.remove(".show-weather-info");
+    } else {
+      console.log(error.message);
+    }
   }
 }
