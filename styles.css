@@ -44,6 +44,6 @@ body {
   color: white;
 }
 
-.show-weather-info {
-  display: flex;
+.hide-weather-info {
+  display: none;
 }

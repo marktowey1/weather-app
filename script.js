@@ -19,7 +19,9 @@ async function checkWeather(e) {
     const data = response.data;
 
     document.getElementById("error").style.display = "none";
-    document.querySelector(".weather-info").classList.add(".show-weather-info");
+    document
+      .querySelector(".weather-info")
+      .classList.remove("hide-weather-info");
     weatherIcon.src = `images/${data.weather[0].main}.png`;
     temperature.innerHTML = data.main.temp + "°C";
     city.innerHTML = data.name;
@@ -30,7 +32,7 @@ async function checkWeather(e) {
       document.getElementById("error").style.display = "block";
       document
         .querySelector(".weather-info")
-        .classList.remove(".show-weather-info");
+        .classList.add("hide-weather-info");
     } else {
       console.log(error.message);
     }
