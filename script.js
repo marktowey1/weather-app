@@ -16,6 +16,7 @@ async function checkWeather(e) {
     const response = await axios.get(
       apiUrl + `&appid=${apiKey}&q=${cityInput}`
     );
+
     const data = response.data;
 
     document.getElementById("error").style.display = "none";
@@ -23,7 +24,7 @@ async function checkWeather(e) {
       .querySelector(".weather-info")
       .classList.remove("hide-weather-info");
     weatherIcon.src = `images/${data.weather[0].main}.png`;
-    temperature.innerHTML = data.main.temp + "°C";
+    temperature.innerHTML = Math.floor(data.main.temp) + "°C";
     city.innerHTML = data.name;
   } catch (error) {
     console.log("Error fetching weather data:", error);
