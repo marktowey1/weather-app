@@ -23,7 +23,7 @@ async function checkWeather(e) {
     document
       .querySelector(".weather-info")
       .classList.remove("hide-weather-info");
-    weatherIcon.src = `/images/${data.weather[0].main}.png`;
+    weatherIcon.src = `./images/${data.weather[0].main}.png`;
     temperature.innerHTML = Math.floor(data.main.temp) + "°C";
     city.innerHTML = data.name;
   } catch (error) {
